@@ -42,7 +42,7 @@ public static partial class RayGui
     public static partial void GuiUnlock();
 
     [LibraryImport(LibraryName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GuiIsLocked();
 
     [LibraryImport(LibraryName)]
@@ -92,7 +92,7 @@ public static partial class RayGui
     public static unsafe partial uint* GuiGetIcons();
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
-    public static unsafe partial byte** GuiLoadIcons(string fileName, [MarshalAs(UnmanagedType.Bool)] bool loadIconsName);
+    public static unsafe partial byte** GuiLoadIcons(string fileName, [MarshalAs(UnmanagedType.I1)] bool loadIconsName);
 
     [LibraryImport(LibraryName)]
     public static partial void GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, Color color);
@@ -126,7 +126,7 @@ public static partial class RayGui
     public static partial int GuiLabelButton(Rectangle bounds, string text);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
-    public static partial int GuiToggle(Rectangle bounds, string text, [MarshalAs(UnmanagedType.Bool)] ref bool active);
+    public static partial int GuiToggle(Rectangle bounds, string text, [MarshalAs(UnmanagedType.I1)] ref bool active);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiToggleGroup(Rectangle bounds, string text, ref int active);
@@ -135,24 +135,24 @@ public static partial class RayGui
     public static partial int GuiToggleSlider(Rectangle bounds, string text, ref int active);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
-    public static partial int GuiCheckBox(Rectangle bounds, string text, [MarshalAs(UnmanagedType.Bool)] ref bool @checked);
+    public static partial int GuiCheckBox(Rectangle bounds, string text, [MarshalAs(UnmanagedType.I1)] ref bool @checked);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiComboBox(Rectangle bounds, string text, ref int active);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
-    public static partial int GuiDropdownBox(Rectangle bounds, string text, ref int active, [MarshalAs(UnmanagedType.Bool)] bool editMode);
+    public static partial int GuiDropdownBox(Rectangle bounds, string text, ref int active, [MarshalAs(UnmanagedType.I1)] bool editMode);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiSpinner(Rectangle bounds, string text, ref int value, int minValue,
-        int maxValue, [MarshalAs(UnmanagedType.Bool)] bool editMode);
+        int maxValue, [MarshalAs(UnmanagedType.I1)] bool editMode);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiValueBox(Rectangle bounds, string text, ref int value, int minValue,
-        int maxValue, [MarshalAs(UnmanagedType.Bool)] bool editMode);
+        int maxValue, [MarshalAs(UnmanagedType.I1)] bool editMode);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
-    public static partial int GuiTextBox(Rectangle bounds, ref string text, int textSize, [MarshalAs(UnmanagedType.Bool)] bool editMode);
+    public static partial int GuiTextBox(Rectangle bounds, ref string text, int textSize, [MarshalAs(UnmanagedType.I1)] bool editMode);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiSlider(Rectangle bounds, string textLeft, string textRight, ref float value,
@@ -188,7 +188,7 @@ public static partial class RayGui
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiTextInputBox(Rectangle bounds, string title, string message, string buttons,
-        ref string text, int textMaxSize, [MarshalAs(UnmanagedType.Bool)] ref bool secretViewActive);
+        ref string text, int textMaxSize, [MarshalAs(UnmanagedType.I1)] ref bool secretViewActive);
 
     [LibraryImport(LibraryName, StringMarshalling = StringMarshalling.Utf8)]
     public static partial int GuiColorPicker(Rectangle bounds, string text, ref Color color);
